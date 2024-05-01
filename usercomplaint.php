@@ -28,9 +28,9 @@ if(!$con){
 $department=$_POST['department'];
 $complaint_details=$_POST['complaint_details'];
 $username=$_POST['staticname'];
-
-$sql ="INSERT INTO `cwh_project`.`complaint` (`department`, `complaint_details`, `uname`)
- VALUES ('$department', '$complaint_details', '$username');";
+$location = $_POST['location'];
+$sql ="INSERT INTO `cwh_project`.`complaint` (`department`, `complaint_details`, `uname`,`location`)
+ VALUES ('$department', '$complaint_details', '$username','$location');";
   $result=mysqli_query($con,$sql);
   if($result){
    
@@ -101,11 +101,21 @@ $sql ="INSERT INTO `cwh_project`.`complaint` (`department`, `complaint_details`,
         <label for="department" class="form-label">Please Select Department</label>
         <select id="department" name="department" class="form-select">
           <option>Disabled select</option>
-          <option>krish</option>
-          <option>rishit</option>
+          <option>IT Infrastructure</option>
+          <option>Academic</option>
+          <option>AC and Electrical</option>
+          <option>Student Section</option>
+          <option>Food Quality Problem</option>
+          <option>Lost and Found Section</option>
         </select>
       </div>
   
+      <div class="mb-3">
+    <label for="location" class="form-label">Please Enter location</label>
+    <input type="text" class="form-control" name="location" id="location">
+  </div>
+
+
       <div class="mb-3 btn-center">
         <button type="submit" name="complaint" class="btn btn-primary">Complaint</button>
       </div>
