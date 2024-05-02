@@ -25,6 +25,7 @@ $num = mysqli_num_rows($result);
 $count = 1;
 
 echo('<div class="container">');
+echo('<h3>Your Complaints</h3>');
 echo('<table class="table">');
 echo('<thead class="table-primary">');
 echo('<tr>');

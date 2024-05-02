@@ -67,6 +67,9 @@ if(isset($_POST['login'])){
             display: flex;
             justify-content: center;
         }
+        #signup{
+            color:#5D7EF7;
+        }
     </style>
 </head>
 <body>
@@ -98,9 +101,30 @@ if(isset($_POST['login'])){
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" name="password" id="password">
             </div>
+
+            <!-- <div class="mb-3">
+            <label for="role" class="form-label">Login As: </label>
+
+            <div class="btn-group"  style="margin-left: 30px;" role="group" name="role" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio1">User</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio2">Admin</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio3">Manager</label>
+                </div>
+            </div> -->
+
+            <div class="mb-3">
+            <label for="signup" class="form-label" >New User?</label>
+            <a href="signup.php" id="signup" name="signup" class="alert-link">Signup</a>
+            </div>
             <div class="mb-3 btn-center">
                 <button type="submit" name="login" class="btn btn-primary">Login</button>
             </div>
+          
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
