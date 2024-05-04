@@ -46,8 +46,19 @@ echo '
           
           echo '
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
+            <a class="nav-link" href="User_login.php">User</a>
           </li>';
+
+          echo '
+          <li class="nav-item">
+            <a class="nav-link" href="Admin_login.php">Admin</a>
+          </li>';
+
+          echo '
+          <li class="nav-item">
+            <a class="nav-link" href="Manager_login.php">Manager</a>
+          </li>';
+
         }
 
         if($loggedin){       
@@ -61,24 +72,7 @@ echo '
       echo '
       </ul>';
  
-      if(!$loggedin){
-        echo '
-        <div class="as">
-            <label for="role" class="form-label"> </label>
-            <div class="btn-group" role="group" name="role" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                <label class="btn btn-outline-light border-2" for="btnradio1">User</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                <label class="btn btn-outline-light border-2" for="btnradio2">Admin</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                <label class="btn btn-outline-light border-2" for="btnradio3">Manager</label>
-            </div>
-    </div>
-
-      ';
-    }
+      
     
 
       echo '

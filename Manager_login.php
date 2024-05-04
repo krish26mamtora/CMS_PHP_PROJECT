@@ -5,21 +5,22 @@ if(isset($_POST['login'])){
     include 'partials/dbconnect.php';
     $username = $_POST['uname'];
     $password = $_POST['password'];
-    $role = $_POST['role'];
- {   $sql = "SELECT * FROM `users` WHERE name='$username'";
+    
+    
+ {   $sql = "SELECT * FROM `manager` WHERE name='$username'";
 
     $result = mysqli_query($link, $sql);
     $num = mysqli_num_rows($result);
 
-        if($num==1){
-          while($row = mysqli_fetch_assoc($result)){
-            if(password_verify($password,$row['password'])){
+    if($num==1){
+        while($row = mysqli_fetch_assoc($result)){
+          if(($password == $row['password'])){
 
               $login = true;
               session_start();
               $_SESSION['loggedin']=true;
               $_SESSION['name']=$username;
-              $_SESSION['role']=$role;
+              $_SESSION['role'] = 'Manager';
               header("location:homepage.php");
             }
             else {
@@ -91,8 +92,8 @@ if(isset($_POST['login'])){
     }
     ?>
     <div class="container">
-        <form method ="POST" action="login.php" class="form-container">
-            <h1 class="text-center">Login</h1>
+        <form method ="POST" action="Manager_login.php" class="form-container">
+            <h2 class="text-center">Manager Login</h2>
             <div class="mb-3">
                 <label for="uname" class="form-label">Username</label>
                 <input type="text" class="form-control" id="uname" name="uname" aria-describedby="emailHelp">
@@ -104,10 +105,8 @@ if(isset($_POST['login'])){
 
           
 
-            <div class="mb-3">
-            <label for="signup" class="form-label" >New User?</label>
-            <a href="signup.php" id="signup" name="signup" class="alert-link">Signup</a>
-            </div>
+          
+
             <div class="mb-3 btn-center">
                 <button type="submit" name="login" class="btn btn-primary">Login</button>
             </div>

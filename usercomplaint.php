@@ -62,7 +62,7 @@ $sql ="INSERT INTO `cwh_project`.`complaint` (`department`, `complaint_details`,
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 120vh;
         margin-top: -30px; 
 
     }
@@ -112,6 +112,11 @@ $sql ="INSERT INTO `cwh_project`.`complaint` (`department`, `complaint_details`,
         </select>
       </div>
   
+      <div class="mb-3">
+  <label for="formFile" class="form-label">Default file input example</label>
+  <input class="form-control" type="file" id="formFile">
+</div>
+
       <div class="mb-3">
     <label for="location" class="form-label">Please Enter location</label>
     <input type="text" class="form-control" name="location" id="location">
