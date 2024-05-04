@@ -63,7 +63,7 @@ $sql ="INSERT INTO `cwh_project`.`complaint` (`department`, `complaint_details`,
         justify-content: center;
         align-items: center;
         height: 100vh;
-        margin-top: -50px; 
+        margin-top: -30px; 
 
     }
     .form-container {
@@ -78,7 +78,9 @@ $sql ="INSERT INTO `cwh_project`.`complaint` (`department`, `complaint_details`,
 </head>
 <body>
   <div class="container">
+
     <form method="POST" action="usercomplaint.php" class="form-container">
+      
       <h2 class="text-center mb-4">Add Complaint</h2>
 
       <div class="mb-3 row">

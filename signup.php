@@ -74,7 +74,7 @@ $showerror = false;
     </style>
 </head>
 <body>
-    <?php require 'partials/nav.php'; ?>
+    <?php require 'partials/nav2.php'; ?>
     <?php
     if($showalert){
         echo '
