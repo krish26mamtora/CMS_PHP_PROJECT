@@ -23,7 +23,7 @@ $sql = 'SELECT * FROM complaint where uname= "' . $_SESSION['name'] . '"';
 $result = mysqli_query($con, $sql);
 $num = mysqli_num_rows($result);
 $count = 1;
-
+echo $_SESSION['role'];
 echo('<div class="container">');
 echo('<h3>Your Complaints</h3>');
 echo('<table class="table">');

@@ -17,6 +17,7 @@ echo '
       .custom-navbar {
         background-color: #5D7EF7;
       }
+     
     </style>
   </head>
   <body>
@@ -55,12 +56,32 @@ echo '
           <a class="nav-link" href="logout.php">Logout</a>
         </li>';
       }
+
+    
+      echo '
+      </ul>';
+
+      if(!$loggedin){
         echo '
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        <div class="as">
+            <label for="role" class="form-label">Login As: </label>
+            <div class="btn-group" role="group" name="role" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-light border-2" for="btnradio1">User</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-light border-2" for="btnradio2">Admin</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                <label class="btn btn-outline-light border-2" for="btnradio3">Manager</label>
+            </div>
+    </div>
+
+      ';
+    }
+    
+
+      echo '
     </div>
   </div>
 </nav>

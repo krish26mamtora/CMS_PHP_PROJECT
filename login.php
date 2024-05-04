@@ -5,9 +5,8 @@ if(isset($_POST['login'])){
     include 'partials/dbconnect.php';
     $username = $_POST['uname'];
     $password = $_POST['password'];
-
-    // $sql = "SELECT * FROM `users` WHERE name='$username' AND password='$password'";
-    $sql = "SELECT * FROM `users` WHERE name='$username'";
+    $role = $_POST['role'];
+ {   $sql = "SELECT * FROM `users` WHERE name='$username'";
 
     $result = mysqli_query($link, $sql);
     $num = mysqli_num_rows($result);
@@ -20,6 +19,7 @@ if(isset($_POST['login'])){
               session_start();
               $_SESSION['loggedin']=true;
               $_SESSION['name']=$username;
+              $_SESSION['role']=$role;
               header("location:homepage.php");
             }
             else {
@@ -29,7 +29,7 @@ if(isset($_POST['login'])){
         } else {
             $showerror = "Invalid credentials";
         }
-
+}
 }
 ?>
 <!doctype html>
@@ -102,20 +102,7 @@ if(isset($_POST['login'])){
                 <input type="password" class="form-control" name="password" id="password">
             </div>
 
-            <!-- <div class="mb-3">
-            <label for="role" class="form-label">Login As: </label>
-
-            <div class="btn-group"  style="margin-left: 30px;" role="group" name="role" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1">User</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio2">Admin</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio3">Manager</label>
-                </div>
-            </div> -->
+          
 
             <div class="mb-3">
             <label for="signup" class="form-label" >New User?</label>
