@@ -7,7 +7,7 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
   
     
- {   $sql = "SELECT * FROM `users` WHERE name='$username'";
+ {   $sql = "SELECT * FROM users WHERE name='$username'";
 
     $result = mysqli_query($link, $sql);
     $num = mysqli_num_rows($result);
