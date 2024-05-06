@@ -1,38 +1,4 @@
-<?php 
-$login=false;
-$showerror = false;
-if(isset($_POST['login'])){
-    include 'partials/dbconnect.php';
-    $username = $_POST['uname'];
-    $password = $_POST['password'];
-    
-    
- {   $sql = "SELECT * FROM `manager` WHERE name='$username'";
 
-    $result = mysqli_query($link, $sql);
-    $num = mysqli_num_rows($result);
-
-    if($num==1){
-        while($row = mysqli_fetch_assoc($result)){
-          if(($password == $row['password'])){
-
-              $login = true;
-              session_start();
-              $_SESSION['loggedin']=true;
-              $_SESSION['name']=$username;
-              $_SESSION['role'] = 'Manager';
-              header("location:homepage.php");
-            }
-            else {
-              $showerror = "Invalid credentials";
-               }   
-          }
-        } else {
-            $showerror = "Invalid credentials";
-        }
-}
-}
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -75,30 +41,10 @@ if(isset($_POST['login'])){
 </head>
 <body>
     <?php require 'partials/nav.php'; ?>
-    <?php
-    if($login){
-        echo '
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Success</strong> You are logged in
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>';
-    }
-    if($showerror){
-        echo '
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Error</strong> '.$showerror.'
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>';
-    }
-    ?>
     <div class="container">
-<<<<<<< HEAD
-        <form method ="POST" action="Manager_login.php" class="form-container">
-            <h2 class="text-center">Manager Login</h2><br>
-=======
-        <form method ="POST" action="Managerhomepage.php" class="form-container">
-            <h2 class="text-center">Manager Login</h2>
->>>>>>> ef0b5d3f726765c9268f2b24164e2c807b74e4da
+        <form method ="POST" action="addmanagerdetails.php" class="form-container">
+            <h2 class="text-center">Add Manager</h2>
+            <br>
             <div class="mb-3">
                 <label for="uname" class="form-label">Username</label>
                 <input type="text" class="form-control" id="uname" name="uname" aria-describedby="emailHelp">
@@ -107,8 +53,23 @@ if(isset($_POST['login'])){
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" name="password" id="password">
             </div>
+            <div class="mb-3">
+            <label for="department" class="form-label">Please Select Department</label>
+                <select id="department" name="department" class="form-select">
+                  <option>Disabled select</option>
+                  <option>IT Infrastructure</option>
+                  <option>Academic</option>
+                  <option>AC and Electrical</option>
+                  <option>Student Section</option>
+                  <option>Food Quality Problem</option>
+                  <option>Lost and Found Section</option>
+                </select>
+            </div>
+          
+
+            
             <div class="mb-3 btn-center">
-                <button type="submit" name="login" class="btn btn-primary">Login</button>
+                <button type="submit" name="managerperform1" class="btn btn-primary">Add</button>
             </div>
           
         </form>
@@ -116,3 +77,4 @@ if(isset($_POST['login'])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+
