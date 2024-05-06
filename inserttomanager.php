@@ -15,10 +15,9 @@ if (!$con) {
 // Check if form is submitted
 if (isset($_POST['submit'])) {
     $cno = $_POST['complaint_id'];
-    echo $cno;
     $department = $_POST['department'];
     echo $department;
-    $sql = "SELECT * FROM `cwh_project`.`manager`";
+    $sql = "SELECT * FROM `cwh_project`.`manager` where department='$department' ";
     $manager_result = mysqli_query($con, $sql);
     if (!$manager_result) {
         die("ERROR: Could not able to execute $sql. " . mysqli_error($con));
@@ -49,7 +48,7 @@ if (isset($_POST['submit'])) {
    
 
     <div class="mb-3 btn-center">
-        <button type="submit" name="insertperform" class="btn btn-primary">Add</button>
+        <button type="submit" name="insertperform" class="btn btn-primary">Send</button>
     </div>
   
 </form>

@@ -1,4 +1,5 @@
 <?php
+include 'partials/nav.php';
 include 'adminhomepage.php';
 
 $servername = "localhost";

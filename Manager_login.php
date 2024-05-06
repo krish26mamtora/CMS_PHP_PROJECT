@@ -42,7 +42,7 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="css/signup.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        /* Custom CSS for center alignment and label positioning */
+       
         .container {
             display: flex;
             justify-content: center;
@@ -59,10 +59,10 @@ if(isset($_POST['login'])){
             border: 1px solid #5D7EF7;
         }
 
-        /* Adjust input field width */
+      
         .form-control {
-            max-width: 100%; /* Set maximum width to 100% */
-        }
+            max-width: 100%; 
+        /}
 
         .btn-center {
             display: flex;
@@ -89,7 +89,7 @@ if(isset($_POST['login'])){
             <strong>Error</strong> '.$showerror.'
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
-    }
+    } 
     ?>
     <div class="container">
         <form method ="POST" action="Managerhomepage.php" class="form-container">

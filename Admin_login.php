@@ -96,7 +96,7 @@ if(isset($_POST['login'])){
             <br>
             <div class="mb-3">
                 <label for="uname" class="form-label">Username</label>
-                <input type="text" class="form-control" id="uname" name="uname" aria-describedby="emailHelp">
+                <input type="text" autocomplete="off" class="form-control" id="uname" name="uname" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
