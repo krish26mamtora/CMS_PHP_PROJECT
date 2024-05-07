@@ -9,7 +9,11 @@ include 'adminhomepage.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Complaint Management System - Dashboard</title>
-  <!-- Bootstrap CSS -->
+  <style> 
+
+
+
+  </style>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -18,9 +22,13 @@ include 'adminhomepage.php';
   <div class="col-md-9 py-4">
     <h2 class="text-center mb-4">Managers</h2>
     
-    <div class="col-md-3 py-4">
+    <div id="row">
+      
+    <div class="col-md-4 py-4">
       <h2 class="text-center mb-4">Filter by Department</h2>
-      <form action="adminmanager.php" method="GET">
+      
+      <div class="container" id="r">
+      <!-- <form action="adminmanager.php" method="GET">
         <div class="form-group">
           <select id="department" name="department" class="form-control">
             <option value="all">All</option>
@@ -31,12 +39,29 @@ include 'adminhomepage.php';
             <option value="Food Quality Problem">Food Quality Problem</option>
             <option value="Lost and Found Section">Lost and Found Section</option>
           </select>
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- Example single danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Action
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+        <!-- <div class="form-group">
           <button type="submit" class="btn btn-primary btn-block">Submit</button>
-        </div>
+        </div> -->
       </form>
+      </div>
     </div>
+
+    </div>
+    
       <div class="table-responsive">
         <table class="table table-bordered table-striped">
           <thead class="thead-dark">

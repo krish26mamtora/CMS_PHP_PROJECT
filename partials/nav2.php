@@ -20,6 +20,8 @@ echo '
     <style>
       .custom-navbar {
         background-color: #5D7EF7;
+        font-size : 20px;
+        height:70px;
       }
     </style>
 

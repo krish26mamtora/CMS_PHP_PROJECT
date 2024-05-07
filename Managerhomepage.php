@@ -1,6 +1,6 @@
 <?php
-session_start();
-include 'partials/nav.php';
+// session_start();
+// include 'partials/nav.php';
 if(isset($_POST['login'])){
     
 
@@ -23,6 +23,7 @@ if(isset($_POST['login'])){
     $result =  mysqli_query($con,$sql);
     $num = mysqli_num_rows($result);
     $count=1;
+   echo $_SESSION['name'];
     while($row = mysqli_fetch_assoc($result)){
     
     

@@ -19,9 +19,11 @@ if(isset($_POST['login'])){
               $login = true;
               session_start();
               $_SESSION['loggedin']=true;
+
               $_SESSION['name']=$username;
               $_SESSION['role'] = 'Manager';
               header("location:homepage.php");
+           echo $_SESSION['role'];
             }
             else {
               $showerror = "Invalid credentials";
@@ -92,7 +94,7 @@ if(isset($_POST['login'])){
     } 
     ?>
     <div class="container">
-        <form method ="POST" action="Managerhomepage.php" class="form-container">
+        <form method ="POST" action="Manager_login.php" class="form-container">
             <h2 class="text-center">Manager Login</h2>
             <div class="mb-3">
                 <label for="uname" class="form-label">Username</label>
