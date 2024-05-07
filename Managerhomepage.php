@@ -41,7 +41,7 @@ if(isset($_POST['login'])){
     
          echo('<form action="sample.txt" method="post" id="btn">');
          echo('<td>');
-         echo('<button type="submit" name="perform_date">View Progress</button>');
+         echo('<button type="submit" name="perform_date">View Problem</button>');
          echo('</form>');
       echo('</td></tr>');
         echo('</table>');
