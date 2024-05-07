@@ -92,8 +92,10 @@ if(isset($_POST['login'])){
     } 
     ?>
     <div class="container">
+
         <form method ="POST" action="Managerhomepage.php" class="form-container">
             <h2 class="text-center">Manager Login</h2>
+
             <div class="mb-3">
                 <label for="uname" class="form-label">Username</label>
                 <input type="text" class="form-control" id="uname" name="uname" aria-describedby="emailHelp">
