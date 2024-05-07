@@ -45,43 +45,16 @@
           <li><a href="adminusers.php"><i class="fas fa-user"></i> Users</a></li>
           <li><a href="adminmanager.php"><i class="fas fa-user"></i> Managers</a></li>
           <li><a href="addadmin.php"><i class="fas fa-sign-out-alt"></i> Add Admin</a></li>
+          <li><a href="add_manager.php"><i class="fas fa-sign-out-alt"></i> Add Manager</a></li>
+
           <li><a href="allcomplaints.php"><i class="fas fa-clipboard-list"></i> All Complaints</a></li>
           <li><a href="unsolvedcomplaint.php"><i class="fas fa-exclamation-circle"></i> Unresolved</a></li>
-          <li><a href="#"><i class="fas fa-check-circle"></i> Resolved</a></li>
-          <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
-          <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+          <li><a href="resolved.php"><i class="fas fa-check-circle"></i> Resolved</a></li>
+          <li><a href="adminsettings.php"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
       </div>
-      <!-- Content -->
-      <!-- <div class="col-md-9 col-lg-10">
-        <h2>Welcome to Complaint Management Admin Panel</h2>
-        <div class="complaints-table">
-          <h3>All Complaints</h3>
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Submitted By</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Internet Connection Issue</td>
-                <td>John Doe</td>
-                <td>Unresolved</td>
-                <td><a href="#">View Details</a></td>
-              </tr>
-              Add more rows for other complaints
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div> -->
+ 
 
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

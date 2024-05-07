@@ -1,4 +1,6 @@
 <?php
+session_start();
+include 'partials/nav.php';
 include 'adminhomepage.php';
 ?>
 <!DOCTYPE html>
@@ -11,10 +13,30 @@ include 'adminhomepage.php';
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-
-
-    <div class="col-md-9 py-4">
-      <h2 class="text-center mb-4">Managers</h2>
+  
+  
+  <div class="col-md-9 py-4">
+    <h2 class="text-center mb-4">Managers</h2>
+    
+    <div class="col-md-3 py-4">
+      <h2 class="text-center mb-4">Filter by Department</h2>
+      <form action="adminmanager.php" method="GET">
+        <div class="form-group">
+          <select id="department" name="department" class="form-control">
+            <option value="all">All</option>
+            <option value="IT Infrastructure">IT Infrastructure</option>
+            <option value="Academic">Academic</option>
+            <option value="AC and Electrical">AC and Electrical</option>
+            <option value="Student Section">Student Section</option>
+            <option value="Food Quality Problem">Food Quality Problem</option>
+            <option value="Lost and Found Section">Lost and Found Section</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </div>
+      </form>
+    </div>
       <div class="table-responsive">
         <table class="table table-bordered table-striped">
           <thead class="thead-dark">
@@ -63,40 +85,9 @@ include 'adminhomepage.php';
         </table>
    
     <!-- Filter Form -->
-    <div class="col-md-3 py-4">
-      <h2 class="text-center mb-4">Filter by Department</h2>
-      <form action="adminmanager.php" method="GET">
-        <div class="form-group">
-          <select id="department" name="department" class="form-control">
-            <option value="all">All</option>
-            <option value="IT Infrastructure">IT Infrastructure</option>
-            <option value="Academic">Academic</option>
-            <option value="AC and Electrical">AC and Electrical</option>
-            <option value="Student Section">Student Section</option>
-            <option value="Food Quality Problem">Food Quality Problem</option>
-            <option value="Lost and Found Section">Lost and Found Section</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block">Submit</button>
-        </div>
-      </form>
-    </div>
   </div>
 </div>
 
-<!-- Add Manager Form -->
-<div class="container mt-4">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <form method="POST" action="add_manager.php">
-        <div class="form-group">
-          <button type="submit" name="managerperform" class="btn btn-primary btn-block">Add Manager</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

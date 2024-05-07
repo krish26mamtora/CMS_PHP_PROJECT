@@ -43,7 +43,7 @@
     <?php require 'partials/nav.php'; ?>
     <div class="container">
         <form method ="POST" action="addadmindetails.php" class="form-container">
-            <h2 class="text-center">Add Manager</h2>
+            <h2 class="text-center">Add Admin</h2>
             <br>
             <div class="mb-3">
                 <label for="uname" class="form-label">Username</label>

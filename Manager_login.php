@@ -7,7 +7,7 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
     
     
- {   $sql = "SELECT * FROM `manager` WHERE name='$username'";
+ {   $sql = "SELECT * FROM manager WHERE name='$username'";
 
     $result = mysqli_query($link, $sql);
     $num = mysqli_num_rows($result);
@@ -42,7 +42,7 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="css/signup.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        /* Custom CSS for center alignment and label positioning */
+       
         .container {
             display: flex;
             justify-content: center;
@@ -59,10 +59,10 @@ if(isset($_POST['login'])){
             border: 1px solid #5D7EF7;
         }
 
-        /* Adjust input field width */
+      
         .form-control {
-            max-width: 100%; /* Set maximum width to 100% */
-        }
+            max-width: 100%; 
+        /}
 
         .btn-center {
             display: flex;
@@ -89,16 +89,11 @@ if(isset($_POST['login'])){
             <strong>Error</strong> '.$showerror.'
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
-    }
+    } 
     ?>
     <div class="container">
-<<<<<<< HEAD
-        <form method ="POST" action="Manager_login.php" class="form-container">
-            <h2 class="text-center">Manager Login</h2><br>
-=======
         <form method ="POST" action="Managerhomepage.php" class="form-container">
             <h2 class="text-center">Manager Login</h2>
->>>>>>> ef0b5d3f726765c9268f2b24164e2c807b74e4da
             <div class="mb-3">
                 <label for="uname" class="form-label">Username</label>
                 <input type="text" class="form-control" id="uname" name="uname" aria-describedby="emailHelp">
