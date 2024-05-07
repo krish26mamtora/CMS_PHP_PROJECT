@@ -29,8 +29,9 @@ $department=$_POST['department'];
 $complaint_details=$_POST['complaint_details'];
 $username=$_POST['staticname'];
 $location = $_POST['location'];
-$sql ="INSERT INTO `cwh_project`.`complaint` (`department`, `complaint_details`, `uname`,`location`)
- VALUES ('$department', '$complaint_details', '$username','$location');";
+$status= $_POST['status'];
+$sql ="INSERT INTO `cwh_project`.`complaint` (`department`, `complaint_details`, `uname`,`location`,`status`)
+ VALUES ('$department', '$complaint_details', '$username','$location','$status');";
   $result=mysqli_query($con,$sql);
   if($result){
    
@@ -116,6 +117,8 @@ $sql ="INSERT INTO `cwh_project`.`complaint` (`department`, `complaint_details`,
   <label for="formFile" class="form-label">Default file input example</label>
   <input class="form-control" type="file" id="formFile">
 </div>
+
+  <input type="hidden" value="unsolved" name="status">
 
       <div class="mb-3">
     <label for="location" class="form-label">Please Enter location</label>

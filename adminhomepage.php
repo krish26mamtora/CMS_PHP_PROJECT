@@ -46,10 +46,10 @@
           <li><a href="adminmanager.php"><i class="fas fa-user"></i> Managers</a></li>
           <li><a href="addadmin.php"><i class="fas fa-sign-out-alt"></i> Add Admin</a></li>
           <li><a href="add_manager.php"><i class="fas fa-sign-out-alt"></i> Add Manager</a></li>
-
           <li><a href="allcomplaints.php"><i class="fas fa-clipboard-list"></i> All Complaints</a></li>
-          <li><a href="unsolvedcomplaint.php"><i class="fas fa-exclamation-circle"></i> Unresolved</a></li>
-          <li><a href="resolved.php"><i class="fas fa-check-circle"></i> Resolved</a></li>
+          <li><a href="unsolvedcomplaint.php"><i class="fas fa-exclamation-circle"></i> Unsolved</a></li>
+          <li><a href="ongoingcomplaint.php"><i class="fas fa-sign-out-alt"></i> ongoing </a></li>
+          <li><a href="solvedcomplaint.php"><i class="fas fa-check-circle"></i> Solved</a></li>
           <li><a href="adminsettings.php"><i class="fas fa-cog"></i> Settings</a></li>
           <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>

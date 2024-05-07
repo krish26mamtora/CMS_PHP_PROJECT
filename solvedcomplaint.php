@@ -33,7 +33,7 @@
                 }
 
                 // SQL query to fetch complaint details, department, and username
-                $sql = "SELECT * from complaint where status='unsolved'";
+                $sql = "SELECT * from complaint where status='solved'";
 
                 $result = $con->query($sql);
 

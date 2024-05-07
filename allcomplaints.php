@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'partials/nav.php';
 include 'adminhomepage.php';
 
@@ -27,9 +28,11 @@ if (isset($_GET['department']) && $_GET['department'] !== 'all') {
             <table class='table table-striped'>
                 <thead>
                     <tr>
+                    <th>Username</th>
                         <th>Complaint Details</th>
                         <th>Department</th>
                         <th>Send</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +41,7 @@ if (isset($_GET['department']) && $_GET['department'] !== 'all') {
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_array($result)) {
                                 echo "<tr>";
+                                echo "<td>" . $row['uname'] . "</td>";
                                 echo "<td>" . $row['complaint_details'] . "</td>";
                                 echo "<td>" . $row['department'] . "</td>";
                                 echo "<td>";
@@ -48,6 +52,7 @@ if (isset($_GET['department']) && $_GET['department'] !== 'all') {
                                 echo "<input type='hidden' name='department' value='" . $row['department'] . "'>";
                                 // Submit button
                                 echo "<button type='submit' name='submit' class='btn btn-primary'>Send</button>";
+                                echo "<td>" . $row['status'] . "</td>";
                                 echo "</form>";
                                 echo "</td>";
                                 echo "</tr>";
