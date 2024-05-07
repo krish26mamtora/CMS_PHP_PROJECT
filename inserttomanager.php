@@ -17,7 +17,9 @@ if (isset($_POST['submit'])) {
     $cno = $_POST['complaint_id'];
     $department = $_POST['department'];
     echo $department;
+
     $sql = "SELECT * FROM `cwh_project`.`manager` where department='$department' ";
+
     $manager_result = mysqli_query($con, $sql);
     if (!$manager_result) {
         die("ERROR: Could not able to execute $sql. " . mysqli_error($con));

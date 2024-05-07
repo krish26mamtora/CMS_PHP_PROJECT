@@ -1,4 +1,6 @@
 <?php
+session_start();
+include 'partials/nav.php';
 include 'adminhomepage.php';
 ?>
 <!DOCTYPE html>

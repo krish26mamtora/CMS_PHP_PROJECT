@@ -7,7 +7,7 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
     
     
- {   $sql = "SELECT * FROM `manager` WHERE name='$username'";
+ {   $sql = "SELECT * FROM manager WHERE name='$username'";
 
     $result = mysqli_query($link, $sql);
     $num = mysqli_num_rows($result);
@@ -93,8 +93,8 @@ if(isset($_POST['login'])){
     ?>
     <div class="container">
 
-        <form method ="POST" action="Managerhomepage.php" class="form-container">
-            <h2 class="text-center">Manager Login</h2>
+        <form method ="POST" action="Manager_login.php" class="form-container">
+            <h2 class="text-center">Manager Login</h2><br>
 
             <div class="mb-3">
                 <label for="uname" class="form-label">Username</label>

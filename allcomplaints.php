@@ -11,7 +11,6 @@ if (!$con) {
     die("Sorry, we failed to connect: " . mysqli_connect_error());
 }
 
-// Attempt select query execution
 if (isset($_GET['department']) && $_GET['department'] !== 'all') {
     $_department = $_GET['department'];
 

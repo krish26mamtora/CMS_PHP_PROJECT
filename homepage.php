@@ -38,7 +38,7 @@ if($_SESSION['role']=='User'){
 }
 if($_SESSION['role']=='Admin'){
 
-  include 'Adminhomepage.php';
+  include 'adminhomepage.php';
 }
 if($_SESSION['role']=='Manager'){
 
