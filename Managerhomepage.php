@@ -1,8 +1,8 @@
 <?php
 // session_start();
 // include 'partials/nav.php';
-$uname = $_SESSION['name'];
-echo $uname;
+// $uname = $_SESSION['name'];
+// echo $uname;
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +65,6 @@ echo $uname;
           if(!$con){
             die("Connection to this database failed due to" . mysqli_connect_error());
           }
-          $uname=$_POST['uname'];
       ?>
         <li>
           <!-- <form method="POST" action="managernewcomplaints.php" class="form-container">

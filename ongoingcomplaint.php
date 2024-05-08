@@ -33,7 +33,7 @@
                 }
 
                 // SQL query to fetch complaint details, department, and username
-                $sql = "SELECT * from complaint where status='ongoing'";
+                $sql = "SELECT * from update_complaint where status='ongoing'";
 
                 $result = $con->query($sql);
 
@@ -41,9 +41,9 @@
                     // Output data of each row
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td>" . $row["complaint_details"] . "</td>";
-                        echo "<td>" . $row["department"] . "</td>";
-                        echo "<td>" . $row["uname"] . "</td>";
+                        echo "<td>" . $row["description"] . "</td>";
+                        echo "<td>" . $row["days"] . "</td>";
+                        echo "<td>" . $row["cno"] . "</td>";
                         echo "</tr>";
                     }
                 } else {
