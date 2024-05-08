@@ -51,7 +51,7 @@ while($row = mysqli_fetch_assoc($result)){
 
     echo('<form action="temp.txt" method="post" id="btn">');
     echo('<td>');
-    echo('<button type="submit" class="btn btn-outline-success" >View Progress</button>');
+    echo('<button type="submit" class="btn btn-outline-primary" >View Progress</button>');
     echo('</form>');
  echo('</td>');
 
@@ -73,3 +73,10 @@ mysqli_close($con); // Close connection
         <input type="submit" value="Add Complaint" name="complaint" class="btn btn-primary"> <!-- Added Bootstrap button class -->
     </form>
 </div>
+<br><br>
+<br><br><br>
+<?php
+
+include 'partials/footer2.html';
+
+?>

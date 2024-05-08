@@ -42,7 +42,7 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="css/signup.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        /* Custom CSS for center alignment and label positioning */
+       
         .container {
             display: flex;
             justify-content: center;
@@ -56,12 +56,21 @@ if(isset($_POST['login'])){
             width: 100%;
             padding: 20px;
             border-radius: 10px;
-            border: 1px solid #5D7EF7;
-        }
+            /* background-color: #ebf5f9; */
 
-        /* Adjust input field width */
+            /* border: 1px solid #5D7EF7; */
+        }
+        #bar{
+            height:100vh;
+            width:100vw;
+            display:flex;
+            justify-content:center;
+            /* background-color: #ebf5f9; */
+
+        }
+      
         .form-control {
-            max-width: 100%; /* Set maximum width to 100% */
+            max-width: 100%; 
         }
 
         .btn-center {
@@ -71,9 +80,55 @@ if(isset($_POST['login'])){
         #signup{
             color:#5D7EF7;
         }
+        #in1{
+            height:100vh;
+            width:600px;
+            margin-left:-30px
+            /* margin-right:-20px; */
+
+        }
+        #in2{
+            height:400px;
+            width:480px;
+            margin-left:-50px;
+            /* margin-right:-20px; */
+
+            background-color: #3333ff;
+            border-radius:40px;
+            margin-top:3px;
+
+        }
+        #both{
+            border:2px solid blue;
+            border-radius:50px;
+            height:459px;
+            width:800px;
+            border: 2px solid #ccc;
+             border-radius: 20px; 
+             box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
+
+        }
+        #form{
+            margin-top:40px;
+            /* margin-right:160px; */
+            margin-left:50px;
+       
+
+        }
+        img{
+            height:500px;
+            width:500px;
+        }
+        #b{
+            height:450px;
+            width:450px;
+           
+        }
     </style>
+
+    <!-- style="background-image: url('https://www.shutterstock.com/image-photo/consumer-feedback-concept-customer-satisfaction-260nw-2100424204.jpg');" -->
 </head>
-<body>
+<body >
     <?php require 'partials/nav.php'; ?>
     <?php
     if($login){
@@ -91,8 +146,20 @@ if(isset($_POST['login'])){
         </div>';
     }
     ?>
-    <div class="container">
-        <form method ="POST" action="User_login.php" class="form-container">
+<div class="container" id="bar">
+        <div class="container" id="both">
+          
+
+   <div class="container" id="in2">
+
+      
+          <img src="mm.png" class="d-block w-100" alt="no">
+         
+
+        </div>
+        <div class="container" id="in1">
+
+        <form method ="POST" action="User_login.php" class="form-container" id="form">
             <h1 class="text-center">User Login</h1>
             <div class="mb-3">
                 <label for="uname" class="form-label">Username</label>
@@ -110,11 +177,17 @@ if(isset($_POST['login'])){
             <a href="signup.php" id="signup" name="signup" class="alert-link">Signup</a>
             </div>
             <div class="mb-3 btn-center">
-                <button type="submit" name="login" class="btn btn-primary">Login</button>
+                <button id="btn"type="submit" name="login" class="btn btn-primary">Login</button>
             </div>
           
         </form>
+        </div>
     </div>
+    
+   </div>
+  
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+z24LezCkAAQ8a/WPA5KZ9Guo6EAQ8bI/FFBp+" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

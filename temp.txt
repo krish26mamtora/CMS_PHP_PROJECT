@@ -1,11 +1,8 @@
 manager : update complaint status and send to admin
 admin : send the response of manager to user
-admin - dashboard: css
+admin - dashboard: css-- done
 admin - users : search field , view details : profile of user and its complaint history
 admin - manager : css
 admin - add admin : change navbar
 admin - add department
 admin - allcomplaints , send complaint in same page
-
-
-

@@ -9,38 +9,72 @@ include 'adminhomepage.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Complaint Management System - Dashboard</title>
-  <!-- Bootstrap CSS -->
+  <style> 
+  #r{
+    width: 900px;
+  }
+button{
+  width: 100px;
+  
+}
+table{
+  text-align:center;
+}
+
+
+  </style>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
   
-  
   <div class="col-md-9 py-4">
     <h2 class="text-center mb-4">Managers</h2>
     
-    <div class="col-md-3 py-4">
-      <h2 class="text-center mb-4">Filter by Department</h2>
-      <form action="adminmanager.php" method="GET">
-        <div class="form-group">
-          <select id="department" name="department" class="form-control">
-            <option value="all">All</option>
-            <option value="IT Infrastructure">IT Infrastructure</option>
-            <option value="Academic">Academic</option>
-            <option value="AC and Electrical">AC and Electrical</option>
-            <option value="Student Section">Student Section</option>
-            <option value="Food Quality Problem">Food Quality Problem</option>
-            <option value="Lost and Found Section">Lost and Found Section</option>
-          </select>
+    <div id="row">
+      
+    <div class="col-md-4 py-4">
+      <!-- <h2 class="text-center mb-4">Filter by Department</h2> -->
+      
+<div class="container" id="r">
+    <form action="adminmanager.php" method="GET">
+        <div class="row align-items-end"> <!-- Added align-items-end to align items to the bottom of the row -->
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="department" class="form-label"><h4>Filter by Department</h4></label>
+                </div>
+            </div>
+            <div class="col-md-6"> <!-- Adjusted column width -->
+                <div class="form-group">
+                    <select id="department" name="department" class="form-control">
+                        <option value="all">All</option>
+                        <option value="IT Infrastructure">IT Infrastructure</option>
+                        <option value="Academic">Academic</option>
+                        <option value="AC and Electrical">AC and Electrical</option>
+                        <option value="Student Section">Student Section</option>
+                        <option value="Food Quality Problem">Food Quality Problem</option>
+                        <option value="Lost and Found Section">Lost and Found Section</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2"> <!-- Adjusted column width -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block">Submit</button>
-        </div>
-      </form>
+    </form>
+</div>
+
+
     </div>
+
+    </div>
+    
       <div class="table-responsive">
         <table class="table table-bordered table-striped">
           <thead class="thead-dark">
             <tr>
+              <th>No</th>
               <th>Name</th>
               <th>Department</th>
               <th>Details</th>
@@ -53,7 +87,7 @@ include 'adminhomepage.php';
             $username = "root";
             $password = "";
             $database = "cwh_project";
-
+          $value=1;
             $con = mysqli_connect($servername, $username, $password, $database);
             if (!$con) {
                 die("Connection failed: " . mysqli_connect_error());
@@ -71,9 +105,11 @@ include 'adminhomepage.php';
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
+                    echo "<td>" . $value . "</td>";
+                    $value=$value+1;
                     echo "<td>" . $row['name'] . "</td>";
                     echo "<td>" . $row['department'] . "</td>";
-                    echo "<td><a href='#' class='btn btn-info btn-sm'>Show Details</a></td>";
+                    echo "<td><a href='#' class='btn btn-primary'>Show Details</a></td>";
                     echo "</tr>";
                 }
             } else {

@@ -71,6 +71,27 @@ $showerror = false;
             display: flex;
             justify-content: center;
         }
+        img{
+            height:500px;
+            width:500px;
+        }
+        #bar{
+            margin-top:30px;
+            height:550px;
+            width:980px;
+            background-color: #ebf5f9;
+            border : 3px solid blue;
+            border-radius:10px;
+        }
+        #form{
+           margin-top:15px;
+           margin-right:15px;
+
+             border : 2px solid blue;
+
+            background-color:white;
+
+        }
     </style>
 </head>
 <body>
@@ -91,8 +112,10 @@ $showerror = false;
         </div>';
     }
     ?>
-    <div class="container">
-        <form method="POST" action="signup.php" class="form-container">
+     <div class="container" id="bar"> 
+   <div class="container" id="in">
+        <img src="signup.png"  alt="wait">
+        <form method="POST"  id="form"action="signup.php" class="form-container">
             <h1 class="text-center">Signup</h1>
             <div class="mb-3">
                 <label for="uname" class="form-label">Username</label>
@@ -111,6 +134,8 @@ $showerror = false;
                 <button type="submit" name="signup" class="btn btn-primary">Signup</button>
             </div>
         </form>
+        
+    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

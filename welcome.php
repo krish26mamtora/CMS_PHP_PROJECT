@@ -5,5 +5,5 @@ echo "new user";
 echo "<br>";
 echo "login/signup to use our features";
 
-include 'partials/footer.html';
+include 'partials/footer2.html';
 ?>

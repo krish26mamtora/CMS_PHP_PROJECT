@@ -16,6 +16,8 @@ echo '
     <style>
       .custom-navbar {
         background-color: #5D7EF7;
+        font-size : 20px;
+        height:70px;
       }
      
     </style>
@@ -23,7 +25,7 @@ echo '
   <body>
   <nav class="navbar navbar-expand-lg custom-navbar" >
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Don</a>
+    <a class="navbar-brand" href="#">CMS</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
