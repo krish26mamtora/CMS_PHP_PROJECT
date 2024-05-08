@@ -21,4 +21,8 @@ admin - user view details
 managerside css
 
 
+<<<<<<< HEAD
 admin  send complaint to user
+=======
+admin  send complaint to user
+>>>>>>> 15a1750c9f36fe303a0f446cd0513bd729b5c998

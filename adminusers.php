@@ -1,7 +1,16 @@
 <?php
+if(isset($_POST['details'])){
+  
+header("location:admin_useralldetials.php") ;
+exit;
+}?>
+<?php
 session_start();
 include 'partials/nav.php';
 include 'adminhomepage.php';
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +33,7 @@ include 'adminhomepage.php';
 
 <div class="container mt-5">
   <h2 class="text-center mb-4">Users List</h2>
+  
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
@@ -48,19 +58,21 @@ include 'adminhomepage.php';
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        // SQL query to select all users
         $sql = "SELECT * FROM users";
 
-        // Execute query
         $result = mysqli_query($con, $sql);
 
-        // Check if there are any results
         if (mysqli_num_rows($result) > 0) {
-            // Output data of each row
-            while ($row = mysqli_fetch_assoc($result)) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td>" . $row["name"] . "</td>";
-                echo "<td><button>View Details</button></td>";
+                echo '<td>
+                <form action="admin_useralldetials.php" method="POST">
+                <input type="text" name="uname" style="display: none;" value='.$row["name"].'>
+
+                  <button type="submit" name="details">View Details</button>
+                </form></td>';
 
                 echo "</tr>";
             }

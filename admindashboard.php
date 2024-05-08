@@ -26,6 +26,7 @@ include 'adminhomepage.php';
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+  
       <div class="col-md-9 py-4" id="all">
         <h2 class="text-center mb-4">Welcome to Complaint Management Dashboard</h2><br>
         <div id="he">
@@ -57,7 +58,23 @@ include 'adminhomepage.php';
             <div class="card">
               <div class="card-body"  id="rc">
                 <h5 class="card-title">Resolved Complaints</h5>
-                <p class="card-text"><h4>80</h4></p>
+                <p class="card-text"><h4>
+                <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $num=0;
+                $con = mysqli_connect($servername, $username, $password,"cwh_project");
+                if (!$con) {
+                    die("Sorry, we failed to connect: " . mysqli_connect_error());
+                }   
+                $uname=$_SESSION['name'];
+                $sql = "SELECT * FROM complaint where status= 'solved'";
+                $result =  mysqli_query($con, $sql);
+                $num = mysqli_num_rows($result);
+                echo $num ;
+                ?>
+                </h4></p>
               </div>
             </div>
           </div>
@@ -66,7 +83,23 @@ include 'adminhomepage.php';
             <div class="card">
               <div class="card-body"  id="uc">
                 <h5 class="card-title">Unresolved Complaints</h5>
-                <p class="card-text"><h4>20</h4></p>
+                <p class="card-text"><h4>
+                <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $num=0;
+                $con = mysqli_connect($servername, $username, $password,"cwh_project");
+                if (!$con) {
+                    die("Sorry, we failed to connect: " . mysqli_connect_error());
+                }   
+                $uname=$_SESSION['name'];
+                $sql = "SELECT * FROM complaint where status= 'unsolved'";
+                $result =  mysqli_query($con, $sql);
+                $num = mysqli_num_rows($result);
+                echo $num ;
+                ?>
+                </h4></p>
               </div>
             </div>
           </div>
@@ -97,7 +130,23 @@ include 'adminhomepage.php';
             <div class="card">
               <div class="card-body" id="og">
                 <h5 class="card-title">Ongoing</h5>
-                <p class="card-text"><h4>100</h4></p>
+                <p class="card-text"><h4>
+                <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $num=0;
+                $con = mysqli_connect($servername, $username, $password,"cwh_project");
+                if (!$con) {
+                    die("Sorry, we failed to connect: " . mysqli_connect_error());
+                }   
+                $uname=$_SESSION['name'];
+                $sql = "SELECT * FROM complaint where status= 'ongoing'";
+                $result =  mysqli_query($con, $sql);
+                $num = mysqli_num_rows($result);
+                echo $num ;
+                ?>
+                </h4></p>
               </div>
             </div>
           </div>

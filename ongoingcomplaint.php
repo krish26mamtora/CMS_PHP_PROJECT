@@ -26,6 +26,7 @@ include 'adminhomepage.php';
                 <th scope="col" style="background-color:#b3d9ff;">Cno</th>
                 <th scope="col" style="background-color:#b3d9ff;">User Name</th>
                     <th scope="col" style="background-color:#b3d9ff;">Description</th>
+
                     <th scope="col" style="background-color:#b3d9ff;">Days</th>
                     <th scope="col" style="background-color:#b3d9ff;">Department</th>
                 </tr>
@@ -62,7 +63,10 @@ include 'adminhomepage.php';
                         echo "<td>" . $row["uname"] . "</td>";
                         echo "<td>" . $row["description"] . "</td>";
                         echo "<td>" . $row["days"] . "</td>";
-                        echo "<td>" . $row["department"] . "</td>";
+
+                    
+                        // echo "<td>" . $row["department"] . "</td>";
+
                         echo "</tr>";
                     }
                 } else {
