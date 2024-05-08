@@ -61,11 +61,10 @@ include 'adminhomepage.php';
 
                         echo "<td>" . $row["description"] . "</td>";
                         echo "<td>" . $row["days"] . "</td>";
-<<<<<<< HEAD
+
+                    
                         // echo "<td>" . $row["department"] . "</td>";
-=======
-                        echo "<td>" . $row["department"] . "</td>";
->>>>>>> f8d1c6020c29e9acf534b56f7628408c9a9a32c4
+
                         echo "</tr>";
                     }
                 } else {

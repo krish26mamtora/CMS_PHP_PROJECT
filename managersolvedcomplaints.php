@@ -16,13 +16,13 @@ include 'managerleft.php';
     // $uname = $_POST['complaint_id'];
   $uname = $_SESSION['name'];
 //   echo $uname;
-    $sql = "SELECT * FROM complaint WHERE cno IN (SELECT cno1 FROM manager_complaints WHERE name='$uname' and status= 'unsolved')";
+    $sql = "SELECT * FROM complaint WHERE cno IN (SELECT cno1 FROM manager_complaints WHERE name='$uname' and status= 'solved')";
     $result =  mysqli_query($con, $sql);
     $num = mysqli_num_rows($result);
     $count = 1;
 
     echo '<div class = "container" style="margin-left:300px; margin-top:-600px; text-align:center;">';
-    echo '<h2>New Complaits</h2>';
+    echo '<h2>Solved Complaits</h2>';
     echo '<br><br>';
 
     echo '<table class="table table-striped table-hover">';
