@@ -15,8 +15,8 @@ include 'partials/nav.php';
     }
     // $uname = $_POST['complaint_id'];
   $uname = $_SESSION['name'];
-  echo $uname;
-    $sql = "SELECT * FROM complaint WHERE cno IN (SELECT cno1 FROM manager_complaints WHERE name='$uname')";
+//   echo $uname;
+    $sql = "SELECT * FROM complaint WHERE cno IN (SELECT cno1 FROM manager_complaints WHERE name='$uname' and status= 'unsolved')";
     $result =  mysqli_query($con, $sql);
     $num = mysqli_num_rows($result);
     $count = 1;
@@ -35,6 +35,7 @@ include 'partials/nav.php';
         echo '<td>';
         echo '<form action="mviewdetails.php" method="post" id="btn">';
         echo '<input type="hidden" name="complaint_id" value="' . $uname . '">';
+        echo '<input type="hidden" name="complaint_cno" value="' . htmlspecialchars($row['cno']) . '">';
         echo '<button type="submit" name="perform_date">View details</button>';
         echo '</form>';
         echo '</td>';

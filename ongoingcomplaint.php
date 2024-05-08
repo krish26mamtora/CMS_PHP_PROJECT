@@ -24,9 +24,9 @@ include 'adminhomepage.php';
             <thead>
                 <tr>
                 <th scope="col" style="background-color:#b3d9ff;">Cno</th>
-                    <th scope="col" style="background-color:#b3d9ff;">Complaint Details</th>
+                    <th scope="col" style="background-color:#b3d9ff;">Description/th>
+                    <th scope="col" style="background-color:#b3d9ff;">Days</th>
                     <th scope="col" style="background-color:#b3d9ff;">Department</th>
-                    <th scope="col" style="background-color:#b3d9ff;">Username</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,7 +56,7 @@ include 'adminhomepage.php';
                         echo "<td>" . $row["cno"] . "</td>";
                         echo "<td>" . $row["description"] . "</td>";
                         echo "<td>" . $row["days"] . "</td>";
-                        echo "<td>" . $row["cno"] . "</td>";
+                        // echo "<td>" . $row["department"] . "</td>";
                         echo "</tr>";
                     }
                 } else {

@@ -54,6 +54,7 @@ include 'adminhomepage.php';
                     // Output data of each row
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
+                        echo "<td>" . $row["cno"] . "</td>";
                         echo "<td>" . $row["complaint_details"] . "</td>";
                         echo "<td>" . $row["department"] . "</td>";
                         echo "<td>" . $row["uname"] . "</td>";

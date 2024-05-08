@@ -43,8 +43,8 @@ include 'partials/nav.php';
             }
 
             $uname=$_POST['complaint_id'];
-
-            $sql = "SELECT * FROM complaint WHERE cno IN (SELECT cno1 FROM manager_complaints WHERE name='$uname')";
+            $cno= $_POST['complaint_cno'];
+            $sql = "SELECT * FROM complaint WHERE cno IN (SELECT cno1 FROM manager_complaints WHERE name='$uname' and cno='$cno')";
             $result = mysqli_query($con, $sql);
 
             if(mysqli_num_rows($result) > 0) {

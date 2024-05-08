@@ -52,6 +52,7 @@
           <li><a href="ongoingcomplaint.php"><i class="fas fa-sign-out-alt"></i> ongoing </a></li>
           <li><a href="solvedcomplaint.php"><i class="fas fa-check-circle"></i> Solved</a></li>
           <li><a href="adminsettings.php"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="adddepartment.php"><i class="fas fa-cog"></i> Add Department</a></li>
           <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
       </div>
