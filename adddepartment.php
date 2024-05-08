@@ -12,7 +12,7 @@
 <form action="adddepartment.php" method="POST">
   <label for="department_name">Department Name:</label><br>
   <input type="text" id="department_name" name="department_name"><br><br>
-  <button type='submit' name='Submit'>Add</button>
+  <button type='submit' name='submit'>Add</button>
 </form>
 
 </body>
@@ -31,7 +31,8 @@ if (isset($_POST['submit'])) {
     }
 
     $department_name=$_POST['department_name'];
-    $sql = "INSERT INTO `add_department` (department) VALUES ($department_name)";
+  
+$sql = "INSERT INTO add_department ( department) VALUES ( '$department_name')";
 
     if(mysqli_query($link, $sql)){
         echo "Records inserted successfully.";

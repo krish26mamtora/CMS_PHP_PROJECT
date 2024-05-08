@@ -1,7 +1,6 @@
 <?php 
-session_start();
-
-include 'partials/nav.php';
+$showalert=false;
+$showerror = false;
 if(isset($_POST['managerperform1'])){
     $server="localhost";
 $username="root";
@@ -18,12 +17,12 @@ $department = $_POST['department'];
 
 $sql ="INSERT INTO `cwh_project`.`manager`(name, password, department) VALUES ('$name1','$password','$department')";
   $result=mysqli_query($con,$sql);
+  if($result){
+    $showalert = true;
+  }
 }
 ?>
-<?php
-include 'adminhomepage.php';
 
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -65,8 +64,30 @@ include 'adminhomepage.php';
     </style>
 </head>
 <body>
+<?php require 'partials/nav.php';?> 
+<?php
+    if($showalert){
+        echo '
+        <div class="alert alert-success alert-dismissible fade show" role="alert" >
+        <strong>Success</strong> Manager has been added successfully.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+    }
+    if($showerror){
+        echo '
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="height: 65px; margin-left :300px;">
+    <strong>Error</strong> '. $showerror.'
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+        ';
+    }
+    ?>
+<?php
+    include 'adminhomepage.php';
+    ?>
     <div class="container">
-        <form method ="POST" action="addmanagerdetails.php" class="form-container">
+        <form method ="POST" action="add_manager.php" class="form-container">
             <h2 class="text-center">Add Manager</h2>
             <br>
             <div class="mb-3">
@@ -79,15 +100,31 @@ include 'adminhomepage.php';
             </div>
             <div class="mb-3">
             <label for="department" class="form-label">Please Select Department</label>
-                <select id="department" name="department" class="form-select">
-                  <option>Disabled select</option>
-                  <option>IT Infrastructure</option>
-                  <option>Academic</option>
-                  <option>AC and Electrical</option>
-                  <option>Student Section</option>
-                  <option>Food Quality Problem</option>
-                  <option>Lost and Found Section</option>
-                </select>
+            <select id="department" name="department" class="form-select">
+        <?php
+        $server="localhost";
+        $username="root";
+        $password="";
+        $dbname="cwh_project";
+        
+        $con =mysqli_connect($server,$username,$password,$dbname);
+        
+        if(!$con){
+            die("connection to this database failed due to".mysqli_connect_error());
+        }
+        
+      $sql = "SELECT department FROM add_department";
+$result = mysqli_query($con, $sql);
+
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<option>' . $row['department'] . '</option>';
+    }
+} else {
+    echo '<option>No departments found</option>';
+}
+        ?>
+    </select>
             </div>
           
 

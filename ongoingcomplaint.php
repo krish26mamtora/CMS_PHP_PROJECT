@@ -24,6 +24,7 @@ include 'adminhomepage.php';
             <thead>
                 <tr>
                 <th scope="col" style="background-color:#b3d9ff;">Cno</th>
+                <th scope="col" style="background-color:#b3d9ff;">User Name</th>
                     <th scope="col" style="background-color:#b3d9ff;">Description</th>
                     <th scope="col" style="background-color:#b3d9ff;">Days</th>
                     <th scope="col" style="background-color:#b3d9ff;">Department</th>
@@ -45,7 +46,10 @@ include 'adminhomepage.php';
                 }
 
                 // SQL query to fetch complaint details, department, and username
-                $sql = "SELECT * from update_complaint where status='ongoing'";
+                $sql = "SELECT complaint.uname, complaint.cno, complaint.department, update_complaint.description, update_complaint.days
+                FROM complaint 
+                INNER JOIN update_complaint  ON complaint.cno = update_complaint.cno;
+                ";
 
                 $result = $con->query($sql);
 
@@ -55,7 +59,7 @@ include 'adminhomepage.php';
                         echo "<tr>";
 
                         echo "<td>" . $row["cno"] . "</td>";
-
+                        echo "<td>" . $row["uname"] . "</td>";
                         echo "<td>" . $row["description"] . "</td>";
                         echo "<td>" . $row["days"] . "</td>";
                         echo "<td>" . $row["department"] . "</td>";

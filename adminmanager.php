@@ -45,15 +45,31 @@ table{
             </div>
             <div class="col-md-6"> <!-- Adjusted column width -->
                 <div class="form-group">
-                    <select id="department" name="department" class="form-control">
-                        <option value="all">All</option>
-                        <option value="IT Infrastructure">IT Infrastructure</option>
-                        <option value="Academic">Academic</option>
-                        <option value="AC and Electrical">AC and Electrical</option>
-                        <option value="Student Section">Student Section</option>
-                        <option value="Food Quality Problem">Food Quality Problem</option>
-                        <option value="Lost and Found Section">Lost and Found Section</option>
-                    </select>
+    <select id="department" name="department" class="form-select">
+        <?php
+        $server="localhost";
+        $username="root";
+        $password="";
+        $dbname="cwh_project";
+        
+        $con =mysqli_connect($server,$username,$password,$dbname);
+        
+        if(!$con){
+            die("connection to this database failed due to".mysqli_connect_error());
+        }
+        
+      $sql = "SELECT department FROM add_department";
+$result = mysqli_query($con, $sql);
+
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<option>' . $row['department'] . '</option>';
+    }
+} else {
+    echo '<option>No departments found</option>';
+}
+        ?>
+    </select>
                 </div>
             </div>
             <div class="col-md-2"> <!-- Adjusted column width -->

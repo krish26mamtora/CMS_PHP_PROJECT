@@ -6,3 +6,19 @@ admin - manager : css
 admin - add admin : change navbar
 admin - add department
 admin - allcomplaints , send complaint in same page
+
+
+
+
+managerside - solved compalint and pending complaints
+dynamic departments
+manager - add manager locha
+manager ongoing - add department name
+
+
+
+admin - user view details
+managerside css
+
+
+admin  send complaint to user

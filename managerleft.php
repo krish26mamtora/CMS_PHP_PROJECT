@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,75 +84,13 @@
         }       
       ?>
       <li><div id="one"><a href="managernewcomplaints.php" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i> New Complaint</a></div></li>
-        <li><div id="two"><a href="#" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i> solved Complaint</a></div></li>
-        <li><div id="three"><a href="#" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i>Pending Complaints</a></div></li>
+        <li><div id="two"><a href="managersolvedcomplaints.php" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i> solved Complaint</a></div></li>
+        <li><div id="three"><a href="managerpendingcomplaints.php" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i>Pending Complaints</a></div></li>
         <li><div id="four"><a href="#" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i>Settings</a></div></li>
       </ul>
      
     </div>
     
-    <div class="col-md-9" style="text-align:center;">
-
-    <h2>Welcome to CMS</h2>
-<br><br>
-      <div class="row" id="char">
-        <div class="col-md-5" >
-          <div class="card mb-4" id="x">
-            <div class="card-body">
-              <h5 class="card-title">Total Complaints</h5>
-              <p class="card-text">
-              
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-5">
-          <div class="card mb-4" id="x">
-            <div class="card-body">
-              <h5 class="card-title">Unsolved Complaints</h5>
-              <p class="card-text">80</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-5">
-          <div class="card mb-4" id="x">
-            <div class="card-body">
-              <h5 class="card-title">Solved Complaints</h5>
-              <p class="card-text">80</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-5">
-          <div class="card mb-4" id="x">
-            <div class="card-body">
-              <h5 class="card-title">Pending Complaints</h5>
-              <p class="card-text">
-              <?php
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $num=0;
-                $con = mysqli_connect($servername, $username, $password,"cwh_project");
-                if (!$con) {
-                    die("Sorry, we failed to connect: " . mysqli_connect_error());
-                }   
-                $uname=$_SESSION['name'];
-                $sql = "SELECT * FROM complaint WHERE cno IN (SELECT cno1 FROM manager_complaints WHERE name='$uname' and status= 'ongoing')";
-                $result =  mysqli_query($con, $sql);
-                $num = mysqli_num_rows($result);
-                echo $num ;
-                ?>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Add more columns or content here if needed -->
-    </div>
   </div>
 </div>
 

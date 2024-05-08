@@ -102,18 +102,36 @@ $sql ="INSERT INTO `cwh_project`.`complaint` (`department`, `complaint_details`,
           <textarea type="text" id="complaint_details" name="complaint_details" class="form-control" cols="40" rows="8" placeholder="Enter Problem"></textarea>
         </div>
       </div>
+   
       <div class="mb-3">
-        <label for="department" class="form-label">Please Select Department</label>
-        <select id="department" name="department" class="form-select">
-          <option>Disabled select</option>
-          <option>IT Infrastructure</option>
-          <option>Academic</option>
-          <option>AC and Electrical</option>
-          <option>Student Section</option>
-          <option>Food Quality Problem</option>
-          <option>Lost and Found Section</option>
-        </select>
-      </div>
+    <label for="department" class="form-label">Please Select Department</label>
+    <select id="department" name="department" class="form-select">
+        <?php
+        $server="localhost";
+        $username="root";
+        $password="";
+        $dbname="cwh_project";
+        
+        $con =mysqli_connect($server,$username,$password,$dbname);
+        
+        if(!$con){
+            die("connection to this database failed due to".mysqli_connect_error());
+        }
+        
+      $sql = "SELECT department FROM add_department";
+$result = mysqli_query($con, $sql);
+
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<option>' . $row['department'] . '</option>';
+    }
+} else {
+    echo '<option>No departments found</option>';
+}
+        ?>
+    </select>
+</div>
+
       <div class="mb-3">
         <label for="formFile" class="form-label">Default file input example</label>
         <input class="form-control" type="file" id="formFile">
