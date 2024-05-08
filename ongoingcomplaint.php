@@ -24,7 +24,10 @@ include 'adminhomepage.php';
             <thead>
                 <tr>
                 <th scope="col" style="background-color:#b3d9ff;">Cno</th>
-                    <th scope="col" style="background-color:#b3d9ff;">Description/th>
+
+             
+                    <th scope="col" style="background-color:#b3d9ff;">Description</th>
+
                     <th scope="col" style="background-color:#b3d9ff;">Days</th>
                     <th scope="col" style="background-color:#b3d9ff;">Department</th>
                 </tr>
@@ -53,10 +56,16 @@ include 'adminhomepage.php';
                     // Output data of each row
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
+
                         echo "<td>" . $row["cno"] . "</td>";
+
                         echo "<td>" . $row["description"] . "</td>";
                         echo "<td>" . $row["days"] . "</td>";
+<<<<<<< HEAD
                         // echo "<td>" . $row["department"] . "</td>";
+=======
+                        echo "<td>" . $row["department"] . "</td>";
+>>>>>>> f8d1c6020c29e9acf534b56f7628408c9a9a32c4
                         echo "</tr>";
                     }
                 } else {
