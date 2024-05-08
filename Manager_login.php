@@ -58,13 +58,23 @@ if(isset($_POST['login'])){
             width: 100%;
             padding: 20px;
             border-radius: 10px;
-            border: 1px solid #5D7EF7;
-        }
+            /* background-color: #ebf5f9; */
 
+            /* border: 1px solid #5D7EF7; */
+        }
+        #bar{
+            height:100vh;
+            width:100vw;
+            display:flex;
+            justify-content:center;
+            /* background-color: #ebf5f9; */
+            
+
+        }
       
         .form-control {
             max-width: 100%; 
-        /}
+        }
 
         .btn-center {
             display: flex;
@@ -72,6 +82,33 @@ if(isset($_POST['login'])){
         }
         #signup{
             color:#5D7EF7;
+        }
+        #in1{
+            height:100vh;
+            width:800px;
+            margin-left:-50px;
+
+        }
+        #in2{
+            height:500px;
+            width:600px;
+            margin-left:-200px;
+            margin-right:-20px;
+
+            background-color: blue;
+            border-radius:50px;
+            margin-top:5px;
+
+        }
+        #both{
+            border:2px solid blue;
+            border-radius:50px;
+            height:450px;
+            width:1000px;
+        }
+        #form{
+            margin-top:40px;
+            margin-right:160px;
         }
     </style>
 </head>
@@ -93,22 +130,32 @@ if(isset($_POST['login'])){
         </div>';
     } 
     ?>
-    <div class="container">
-        <form method ="POST" action="Manager_login.php" class="form-container">
-            <h2 class="text-center">Manager Login</h2>
-            <div class="mb-3">
-                <label for="uname" class="form-label">Username</label>
-                <input type="text" class="form-control" id="uname" name="uname" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password" id="password">
-            </div>
-            <div class="mb-3 btn-center">
-                <button type="submit" name="login" class="btn btn-primary">Login</button>
-            </div>
-          
-        </form>
+    <div class="container" id="bar">
+        <div class="container" id="both">
+            <div class="container" id="in1">
+
+<form method ="POST" id="form" action="Manager_login.php" class="form-container">
+    <h2 class="text-center">Manager Login</h2>
+<br>
+    <div class="mb-3">
+        <label for="uname" class="form-label">Username</label>
+        <input type="text" class="form-control" id="uname" name="uname" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" id="password">
+    </div>
+    <br>
+    <div class="mb-3 btn-center">
+        <button type="submit" name="login" class="btn btn-primary">Login</button>
+    </div>
+  
+</form>
+</div>
+    <div class="container" id="in2">
+        <img src="manaher_login.png" alt="wait">
+    </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

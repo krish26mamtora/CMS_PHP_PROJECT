@@ -1,4 +1,35 @@
 
+<?php 
+$showalert=false;
+$showerror = false;
+    if(isset($_POST['adminperform1'])){
+    
+      include 'partials/dbconnect.php';
+      $username =$_POST['uname'];
+      $password = $_POST['password'];
+      // $exist;
+      $existsql = "SELECT * FROM `admin` WHERE name='$username'";
+      $result = mysqli_query($link,$existsql);
+      $numExistrows = mysqli_num_rows($result);
+      if($numExistrows>0){
+        $exist = true;
+        $showerror = "Username already Exist!";
+
+      }else{
+
+        $sql= "INSERT INTO `users` (`name`, `password`, `date`) VALUES ('$username', '$password', current_timestamp());";
+      $result = mysqli_query($link,$sql);
+      if($result){
+        $showalert = true;
+      }
+      
+    
+    }
+    }
+    
+    ?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -40,9 +71,31 @@
     </style>
 </head>
 <body>
-    <?php require 'partials/nav.php'; ?>
+    <?php require 'partials/nav.php';?> 
+<?php
+    if($showalert){
+        echo '
+        <div class="alert alert-success alert-dismissible fade show" role="alert" >
+        <strong>Success</strong> Admin has been added successfully.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+    }
+    if($showerror){
+        echo '
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="height: 65px; margin-left :300px;">
+    <strong>Error</strong> '. $showerror.'
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+        ';
+    }
+    ?>
+    <?php
+    include 'adminhomepage.php';
+    ?>
+   
     <div class="container">
-        <form method ="POST" action="addadmindetails.php" class="form-container">
+        <form method ="POST" action="addadmin.php" class="form-container">
             <h2 class="text-center">Add Admin</h2>
             <br>
             <div class="mb-3">
@@ -56,7 +109,21 @@
            
  
             <div class="mb-3 btn-center">
-                <button type="submit" name="adminperform1" class="btn btn-primary">Add</button>
+                <button type="submit" name="adminperform1" class="btn btn-primary" id="liveToastBtn">Add</button>
+                
+                    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                        <img src="..." class="rounded me-2" alt="...">
+                        <strong class="me-auto">Bootstrap</strong>
+                        <small>11 mins ago</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                        Hello, world! This is a toast message.
+                        </div>
+                    </div>
+                    </div>
             </div>
           
         </form>

@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 include 'partials/nav.php';
 if(isset($_POST['managerperform1'])){
     $server="localhost";
@@ -18,6 +19,10 @@ $department = $_POST['department'];
 $sql ="INSERT INTO `cwh_project`.`manager`(name, password, department) VALUES ('$name1','$password','$department')";
   $result=mysqli_query($con,$sql);
 }
+?>
+<?php
+include 'adminhomepage.php';
+
 ?>
 <!doctype html>
 <html lang="en">

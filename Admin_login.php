@@ -41,36 +41,75 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="css/signup.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        /* Custom CSS for center alignment and label positioning */
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin-top:-20px;
-        }
+       
+       .container {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+           margin-top:-20px;
+       }
+    
+       .form-container {
+           max-width: 400px;
+           width: 100%;
+           padding: 20px;
+           border-radius: 10px;
+           /* background-color: #ebf5f9; */
+
+           /* border: 1px solid #5D7EF7; */
+       }
+       #bar{
+           height:100vh;
+           width:100vw;
+           display:flex;
+           justify-content:center;
+           /* background-color: #ebf5f9; */
+           
+
+       }
      
-        .form-container {
-            max-width: 400px;
-            width: 100%;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #5D7EF7;
-        }
+       .form-control {
+           max-width: 100%; 
+       }
 
-        /* Adjust input field width */
-        .form-control {
-            max-width: 100%; /* Set maximum width to 100% */
-        }
+       .btn-center {
+           display: flex;
+           justify-content: center;
+       }
+      
+       #in1{
+           height:100vh;
+           width:800px;
+           margin-left:-50px;
 
-        .btn-center {
-            display: flex;
-            justify-content: center;
-        }
-        #signup{
-            color:#5D7EF7;
-        }
-    </style>
+       }
+       #in2{
+           height:500px;
+           width:600px;
+           margin-left:-20px;
+           margin-right:-20px;
+
+           background-color: blue;
+           border-radius:50px;
+           margin-top:5px;
+
+       }
+       #both{
+           border:2px solid blue;
+           border-radius:50px;
+           height:450px;
+           width:1000px;
+       }
+       #form{
+           margin-top:40px;
+           margin-left:90px;
+       }
+       img{
+        height:500px;
+        width:350px;
+       }
+   </style>
 </head>
 <body>
     <?php require 'partials/nav.php'; ?>
@@ -90,28 +129,38 @@ if(isset($_POST['login'])){
         </div>';
     }
     ?>
-    <div class="container">
-        <form method ="POST" action="Admin_login.php" class="form-container">
+
+<div class="container" id="bar">
+        <div class="container" id="both">
+        <div class="container" id="in2">
+        <img src="admin_3d.png" alt="wait">
+    </div>
+            <div class="container" id="in1">
+
+       
+        <form method ="POST" id="form"action="Admin_login.php" class="form-container">
             <h2 class="text-center">Admin Login</h2>
             <br>
             <div class="mb-3">
                 <label for="uname" class="form-label">Username</label>
-                <input type="text" class="form-control" id="uname" name="uname" aria-describedby="emailHelp">
+                <input type="text" autocomplete="off" class="form-control" id="uname" name="uname" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" name="password" id="password">
             </div>
-
-          
-
+<br>
             
             <div class="mb-3 btn-center">
                 <button type="submit" name="login" class="btn btn-primary">Login</button>
             </div>
           
         </form>
+        </div>
+    
+        </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -18,6 +18,9 @@ include 'adminhomepage.php';
       border : 1px solid black;
       border-radius:5px;
     }
+    body{
+      background-color:#e6f2ff;
+    }
    
   </style>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -25,6 +28,7 @@ include 'adminhomepage.php';
 <body>
       <div class="col-md-9 py-4" id="all">
         <h2 class="text-center mb-4">Welcome to Complaint Management Dashboard</h2><br>
+        <div id="he">
         <div class="row">
           <div class="col-md-4 mb-4">
             <div class="card">
@@ -120,6 +124,7 @@ include 'adminhomepage.php';
             </div>
           </div>
 
+        </div>
         </div>
       </div>
    
