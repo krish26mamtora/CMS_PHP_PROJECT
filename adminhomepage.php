@@ -69,7 +69,6 @@
           <li><div id="se"><a href="unsolvedcomplaint.php"><i class="fas fa-exclamation-circle"></i> Unsolved</a></div></li>
           <li><div id="ei"><a href="ongoingcomplaint.php"><i class="fas fa-sign-out-alt"></i> ongoing </a></div></li>
           <li><div id="ni"><a href="solvedcomplaint.php"><i class="fas fa-check-circle"></i> Solved</a></div></li>
-          <li><div id="te"><a href="adminsettings.php"><i class="fas fa-cog"></i> Settings</a></div></li>
           <li><div id="el"><a href="adddepartment.php"><i class="fas fa-cog"></i> Add Department</a></div></li>
           <li><div id="tw"><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></div></li>
         </ul>
@@ -82,3 +81,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+

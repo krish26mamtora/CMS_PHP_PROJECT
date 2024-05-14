@@ -146,7 +146,7 @@ if(isset($_POST['login'])){
         </div>';
     }
     ?>
-<div class="container" id="bar">
+<div class="container" id="bar" >
         <div class="container" id="both">
           
 

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +65,7 @@
 
 <div class="container-fluid" >
   <div class="row" >
-    <div class="col-md-2 sidebar" style="text-align:center; background-color:#343a40; width:500px;">
+    <div class="col-md-2 sidebar" style="text-align:center; background-color:#343a40; width:500px; margin-top:00px;">
       <h4>Quick Links</h4>
       <ul class="list-unstyled">
       <?php
@@ -86,9 +84,9 @@
         }       
       ?>
       <li><div id="one"><a href="managernewcomplaints.php" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i> New Complaint</a></div></li>
-        <li><div id="two"><a href="#" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i> solved Complaint</a></div></li>
-        <li><div id="three"><a href="#" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i>Pending Complaints</a></div></li>
-        <li><div id="four"><a href="#" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i>Settings</a></div></li>
+        <li><div id="two"><a href="managersolvedcomplaints.php" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i> solved Complaint</a></div></li>
+        <li><div id="three"><a href="managerpendingcomplaints.php" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i>Pending Complaints</a></div></li>
+        <!-- <li><div id="four"><a href="#" class="btn btn-link btn-block"><i class="fas fa-clipboard-list"></i>Settings</a></div></li> -->
       </ul>
      
     </div>

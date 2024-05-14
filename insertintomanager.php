@@ -1,5 +1,7 @@
 <?php
-include 'adminhomepage.php';
+//include 'partials/nav.php';
+//include 'adminhomepage.php';
+
 
 $servername = "localhost";
 $username = "root";
@@ -20,7 +22,10 @@ if (isset($_POST['insertperform'])) {
     // Insert data into manager_complaints table
     $sql = "INSERT INTO manager_complaints (cno1,name) VALUES ('$complaint_id', '$manager_name')";
     if (mysqli_query($con, $sql)) {
-        echo "Record added successfully.";
+        // echo "Record added successfully.";
+include 'allcomplaints.php';
+        // exit;
+
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($con);
     }

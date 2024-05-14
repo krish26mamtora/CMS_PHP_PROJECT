@@ -29,6 +29,7 @@ include 'adminhomepage.php';
 
                     <th scope="col" style="background-color:#b3d9ff;">Days</th>
                     <th scope="col" style="background-color:#b3d9ff;">Department</th>
+                    <th scope="col" style="background-color:#b3d9ff;">Send</th>
                 </tr>
             </thead>
             <tbody>
@@ -65,7 +66,15 @@ include 'adminhomepage.php';
                         echo "<td>" . $row["days"] . "</td>";
 
                     
-                        // echo "<td>" . $row["department"] . "</td>";
+                        echo "<td>" . $row["department"] . "</td>";
+                       
+                        echo '<td><form method="post" action="ongoingcomplaint.php">
+                        <input type="submit" name="submit" value="Submit">
+                        <input type="hidden" id="cno" name="cno" value="' . $row["cno"] . '"><br><br>
+                        
+                    </form></td>';
+                    
+                    
 
                         echo "</tr>";
                     }
@@ -79,3 +88,25 @@ include 'adminhomepage.php';
     </div>
 </body>
 </html>
+
+<?php
+if(isset($_POST['submit'])){
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "cwh_project";
+
+    $con = mysqli_connect($server, $username, $password, $dbname);
+
+    // Check connection
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
+$cno=$_POST['cno'];
+    // SQL query to fetch complaint details, department, and username
+    $sql = "UPDATE update_complaint SET send = 'yes' WHERE cno = '$cno'";
+
+
+    $result = $con->query($sql);
+
+}

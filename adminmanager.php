@@ -115,7 +115,7 @@ if ($result) {
                 $department = $_GET['department'];
                 $sql .= " WHERE department = '$department'";
             }
-
+              
             // Execute query and display data
             $result = mysqli_query($con, $sql);
             if (mysqli_num_rows($result) > 0) {
@@ -125,7 +125,14 @@ if ($result) {
                     $value=$value+1;
                     echo "<td>" . $row['name'] . "</td>";
                     echo "<td>" . $row['department'] . "</td>";
-                    echo "<td><a href='#' class='btn btn-primary'>Show Details</a></td>";
+                    echo "<td>
+                    <form method='post' action='managerdetails.php'> 
+                        <input type='hidden' name='cno' value='" . $row['name']  . "'> 
+                        <button type='submit' class='btn btn-primary' name='details'>Show Details</button> 
+                    </form>
+                  </td>";
+            
+            
                     echo "</tr>";
                 }
             } else {

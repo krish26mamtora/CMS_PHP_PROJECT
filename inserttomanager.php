@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
     $cno = $_POST['complaint_id'];
     $department = $_POST['department'];
 
-    $sql = "SELECT * FROM `cwh_project`.`manager` where department='$department' ";
+    $sql = "SELECT * FROM cwh_project.manager where department='$department' ";
 
     $manager_result = mysqli_query($con, $sql);
     if (!$manager_result) {
@@ -28,6 +28,7 @@ if (isset($_POST['submit'])) {
     // Debug output to inspect manager_result
     // var_dump($manager_result);
 ?>
+
 <div class="container" style="margin-top: 150px; height:250px; width: 600px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
     <form method="POST" action="insertintomanager.php" class="form-container" style="padding: 20px;">
         <h2 class="text-center mb-4">Send Complaint to Manager</h2>

@@ -1,9 +1,8 @@
 <?php
+
     include 'partials/nav.php';
 
-echo "new user";
-echo "<br>";
-echo "login/signup to use our features";
-
+// include 'index.php';
+include 'index.html';
 include 'partials/footer2.html';
 ?>

@@ -48,13 +48,17 @@ while($row = mysqli_fetch_assoc($result)){
 
     echo('<td>'.htmlspecialchars($row['department']).'</td>');
     echo('<td>'.htmlspecialchars($row['date']).'</td>');
-
-    echo('<form action="temp.txt" method="post" id="btn">');
     echo('<td>');
-    echo('<button type="submit" class="btn btn-outline-primary" >View Progress</button>');
+    echo('<form action="updatedcomplaintsonuser.php" method="post" id="btn">');
+    echo '<input type="hidden" name="cno" value="' . $row['cno'] . '">';
+    echo('<button type="submit" class="btn btn-outline-primary" name="submit" >View Progress</button>');
     echo('</form>');
  echo('</td>');
-
+//  echo '<td><form method="post" action="updatedcomplaintsonuser.php">
+//  <label for="submit">Updated complaints</label>
+//  <input type="submit" name="submit" value="Submit">
+ 
+//  </form></td>';
 
     echo('</tr>');
     $count++;

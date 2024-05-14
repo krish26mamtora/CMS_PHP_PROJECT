@@ -85,6 +85,7 @@ $sql ="INSERT INTO `cwh_project`.`manager`(name, password, department) VALUES ('
     ?>
 <?php
     include 'adminhomepage.php';
+
     ?>
     <div class="container">
         <form method ="POST" action="add_manager.php" class="form-container">

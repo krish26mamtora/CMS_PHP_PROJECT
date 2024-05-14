@@ -20,13 +20,15 @@ include 'adminhomepage.php';
             <br><br>
         <h2>Complaints with Solved Status</h2>
         <br>
-        <table class="table table-hover" style="width:850px; margin-left:-80px;">
+        <table class="table table-hover" style="width:850px; margin-left:-80px; border:1px solid black;">
             <thead>
-                <tr>
-                    <th scope="col" style="background-color:#b3d9ff;">Cno</th>
+                <tr  >
+                    <th scope="col" style="background-color:#b3d9ff;  ">Cno</th>
                     <th scope="col" style="background-color:#b3d9ff;">Complaint Details</th>
-                    <th scope="col" style="background-color:#b3d9ff;">Department</th>
-                    <th scope="col" style="background-color:#b3d9ff;">Username</th>
+                    <th scope="col" style="background-color:#b3d9ff; ">Department</th>
+                    <th scope="col" style="background-color:#b3d9ff; ">Username</th>
+                    <th scope="col" style="background-color:#b3d9ff; ">Send</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +59,11 @@ include 'adminhomepage.php';
                         echo "<td>" . $row["complaint_details"] . "</td>";
                         echo "<td>" . $row["department"] . "</td>";
                         echo "<td>" . $row["uname"] . "</td>";
+                        echo '<td><form method="post" action="solvedcomplaint.php">
+                        <input type="submit" name="submit" value="Submit" style="background-color:">
+                        <input type="hidden" id="cno" name="cno" value="' . $row["cno"] . '"><br><br>
+                        
+                    </form></td>';
                         echo "</tr>";
                     }
                 } else {
@@ -70,3 +77,26 @@ include 'adminhomepage.php';
             </div></div>
 </body>
 </html>
+
+
+<?php
+if(isset($_POST['submit'])){
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "cwh_project";
+
+    $con = mysqli_connect($server, $username, $password, $dbname);
+
+    // Check connection
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
+$cno=$_POST['cno'];
+    // SQL query to fetch complaint details, department, and username
+    $sql = "UPDATE update_complaint SET send = 'yes' WHERE cno = '$cno'";
+
+
+    $result = $con->query($sql);
+
+}

@@ -22,14 +22,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     require 'partials/nav.php';
    
     ?>
-    <div class="container my-5">
-    <div class="alert alert-primary alert-dismissible fade show" role="alert">
-  <strong>Welcome</strong> <b><?php   echo $_SESSION['name'];   ?></b>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
- 
-</div>
-    </div>
+   
     <?php
 ////if role = user then other wise change this later
 if($_SESSION['role']=='User'){
