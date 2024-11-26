@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Complaint Management System (CMS)</title>
-</head>
-<body>
+
     <h1>Complaint Management System (CMS)</h1>
     <p>
         The Complaint Management System (CMS) is a web-based platform built using PHP to streamline the process of handling complaints within an organization. This system facilitates efficient communication and resolution between <strong>Users</strong>, <strong>Administrators (Admins)</strong>, and <strong>Managers</strong>, enhancing transparency, accountability, and customer satisfaction.
@@ -33,5 +28,4 @@
         <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
         <li><strong>Database:</strong> MySQL</li>
     </ul>
-</body>
-</html>
+
