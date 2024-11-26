@@ -1,56 +1,37 @@
-<div align="center">
-  
-  ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/tourly)
-  ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/tourly?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/tourly?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-  [![YouTube Video Views](https://img.shields.io/youtube/views/FYFmQEpZywc?style=social)](https://youtu.be/FYFmQEpZywc)
-
-  <br />
-  <br />
-  
-  <img src="./readme-images/project-logo.png" />
-
-  <h2 align="center">Tourly - Travel website</h2>
-
-  Tourly is fully responsive travel website, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
-
-  <a href="https://codewithsadee.github.io/tourly/"><strong>➥ Live Demo</strong></a>
-
-</div>
-
-<br />
-
-### Demo Screeshots
-
-![Tourly Desktop Demo](./readme-images/desktop.png "Desktop Demo")
-
-### Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
-
-### Run Locally
-
-To run **Tourly** locally, run this command on your git bash:
-
-Linux and macOS:
-
-```bash
-sudo git clone https://github.com/codewithsadee/tourly.git
-```
-
-Windows:
-
-```bash
-git clone https://github.com/codewithsadee/tourly.git
-```
-
-### Contact
-
-If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
-
-### License
-
-This project is **free to use** and does not contains any license.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System (CMS)</title>
+</head>
+<body>
+    <h1>Complaint Management System (CMS)</h1>
+    <p>
+        The Complaint Management System (CMS) is a web-based platform built using PHP to streamline the process of handling complaints within an organization. This system facilitates efficient communication and resolution between <strong>Users</strong>, <strong>Administrators (Admins)</strong>, and <strong>Managers</strong>, enhancing transparency, accountability, and customer satisfaction.
+    </p>
+    
+    <h2>Key Features</h2>
+    <ul>
+        <li><strong>User-Friendly Complaint Submission:</strong> Users can easily submit complaints through an intuitive form, providing details about their concerns or issues.</li>
+        <li><strong>Real-Time Status Updates:</strong> Users receive updates on the progress and resolution of their complaints, ensuring clarity and trust.</li>
+        <li><strong>Comprehensive Reporting:</strong> The system provides detailed metrics and reports to track complaint resolution performance.</li>
+        <li><strong>Centralized Management:</strong> A centralized platform for admins to oversee all complaints and ensure timely resolution.</li>
+    </ul>
+    
+    <h2>Workflow</h2>
+    <ol>
+        <li><strong>User Submission:</strong> Users submit complaints via the platform.</li>
+        <li><strong>Admin Review:</strong> Admins assess the urgency and type of complaint, then assign it to the relevant manager.</li>
+        <li><strong>Manager Action:</strong> Managers investigate and resolve the complaint, providing regular progress updates to the admin.</li>
+        <li><strong>Resolution Update:</strong> Admins update the user on the status and resolution of their complaint.</li>
+    </ol>
+    
+    <h2>Technology Stack</h2>
+    <ul>
+        <li><strong>Backend:</strong> PHP</li>
+        <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+        <li><strong>Database:</strong> MySQL</li>
+    </ul>
+</body>
+</html>
