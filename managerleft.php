@@ -67,7 +67,7 @@
 <div class="container-fluid" >
   <div class="row" >
     <div class="col-md-2 sidebar" style="text-align:center; background-color:#343a40; width:500px;">
-      <h4>Quick Links</h4>
+      <!-- <h4>Quick Links</h4> -->
       <ul class="list-unstyled">
       <?php
         if(isset($_POST['login'])){

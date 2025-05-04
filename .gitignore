@@ -1,0 +1,18 @@
+.env
+.trae
+partials/vendor/
+certs/
+
+
+# Cache
+*.cache
+*.tmp
+
+
+# IDE and OS files
+*.log
+*.bak
+*.swp
+*.DS_Store
+*.vscode/
+.idea/

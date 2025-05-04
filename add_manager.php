@@ -37,7 +37,7 @@ $sql ="INSERT INTO `cwh_project`.`manager`(name, password, department) VALUES ('
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            /* height: 100vh; */
             margin-top:50px;
         }
      

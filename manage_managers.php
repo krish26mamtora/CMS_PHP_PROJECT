@@ -136,7 +136,7 @@ $result = mysqli_query($con, $sql);
     <!-- Edit Modal -->
     <div id="editModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="closeEditModal()">&times;</span>
             <h2>Edit Manager</h2>
             <form method="POST" class="manager-form">
                 <input type="hidden" name="action" value="edit">
@@ -156,7 +156,10 @@ $result = mysqli_query($con, $sql);
                         ?>
                     </select>
                 </div>
-                <button type="submit" class="btn-submit">Update Manager</button>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-submit">Save Changes</button>
+                    <button type="button" class="btn-cancel" onclick="closeEditModal()">Cancel</button>
+                </div>
             </form>
         </div>
     </div>
@@ -174,33 +177,24 @@ $result = mysqli_query($con, $sql);
             addModal.style.display = 'none';
         }
 
-        // Close modals when clicking outside
+        function editManager(id, name, department) {
+            document.getElementById('edit-id').value = id;
+            document.getElementById('edit-name').value = name;
+            document.getElementById('edit-department').value = department;
+            editModal.style.display = 'block';
+        }
+
+        function closeEditModal() {
+            editModal.style.display = 'none';
+        }
+
+        // Combined window click handler
         window.onclick = function(event) {
             if (event.target == addModal) {
                 closeAddModal();
             }
             if (event.target == editModal) {
-                editModal.style.display = 'none';
-            }
-        }
-
-        const modal = document.getElementById('editModal');
-        const span = document.getElementsByClassName('close')[0];
-
-        function editManager(id, name, department) {
-            document.getElementById('edit-id').value = id;
-            document.getElementById('edit-name').value = name;
-            document.getElementById('edit-department').value = department;
-            modal.style.display = 'block';
-        }
-
-        span.onclick = function() {
-            modal.style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
+                closeEditModal();
             }
         }
     </script>

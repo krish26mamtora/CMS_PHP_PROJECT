@@ -4,7 +4,6 @@ body {
     margin: 0;
 }
 
-/* Sidebar container */
 .sidebar {
     background-color: #343a40;
     color: #ffffff;
@@ -15,17 +14,15 @@ body {
     top: 0;
     left: 0;
     z-index: 1030;
-    /* ensures it stays on top if needed */
+
 }
 
-/* Inner sticky content */
 .sidebar-sticky {
     position: sticky;
     top: 0;
     padding-top: 20px;
 }
 
-/* Heading style */
 .sidebar-heading {
     font-size: 1.5rem;
     font-weight: bold;
