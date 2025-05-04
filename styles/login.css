@@ -1,0 +1,231 @@
+@import url('theme.css');
+
+:root {
+    --form-max-width: 400px;
+    --form-padding: 2.5rem;
+    --form-border-radius: 8px;
+    --form-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --form-transition: all 0.3s ease;
+}
+
+body {
+    font-family: var(--font-family-primary, 'Arial', sans-serif);
+    /* background: linear-gradient(135deg, var(--nav-primary) 0%, var(--nav-secondary) 100%); */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.login-container,
+.container {
+    width: 100%;
+    max-width: var(--form-max-width);
+    margin: 0 auto;
+}
+
+.login-form-wrapper,
+.form-container {
+    background: #ffffff;
+    padding: var(--form-padding);
+    border-radius: var(--form-border-radius);
+    box-shadow: var(--form-shadow);
+    position: relative;
+    overflow: hidden;
+    transition: var(--form-transition);
+}
+
+.login-form-wrapper:hover,
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-form-wrapper::before,
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--nav-primary), var(--nav-secondary));
+}
+
+.login-form {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.login-form h1,
+.form-container h1,
+.form-container h2 {
+    color: var(--nav-primary);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.login-form h1::after,
+.form-container h1::after,
+.form-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--nav-primary);
+    border-radius: 2px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-control {
+    border: 2px solid #e1e1e1;
+    border-radius: var(--form-border-radius);
+    padding: 0.75rem 1rem;
+    width: 92%;
+    transition: var(--form-transition);
+    font-size: 0.95rem;
+}
+
+.form-control:focus {
+    border-color: var(--nav-primary);
+    box-shadow: 0 0 0 3px rgba(93, 126, 247, 0.1);
+    outline: none;
+}
+
+.form-text {
+    color: #666;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.login-btn,
+.btn-primary {
+    width: 100%;
+    padding: 0.75rem 2rem;
+    background: var(--nav-primary);
+    color: white;
+    border: none;
+    border-radius: var(--form-border-radius);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: var(--form-transition);
+}
+
+.login-btn:hover,
+.btn-primary:hover {
+    background: var(--nav-secondary);
+    transform: translateY(-2px);
+}
+
+/* Role-specific styles */
+.admin-login .form-container::before {
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.manager-login .form-container::before {
+    background: linear-gradient(90deg, var(--primary-light), var(--accent-color));
+}
+
+.user-login .form-container::before {
+    background: linear-gradient(90deg, #9B59B6, #3498DB);
+}
+
+.admin-login .btn-primary {
+    background: var(--primary-color);
+}
+
+.manager-login .btn-primary {
+    background: #27AE60;
+}
+
+.user-login .btn-primary {
+    background: #9B59B6;
+}
+
+.admin-login .btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.manager-login .btn-primary:hover,
+.user-login .btn-primary:hover {
+    background: #2C3E50;
+}
+
+/* Alert styles */
+.alert {
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+
+    .login-form-wrapper,
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .login-btn,
+    .btn-primary {
+        padding: 0.6rem 1.5rem;
+    }
+}

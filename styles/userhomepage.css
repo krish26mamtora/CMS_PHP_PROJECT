@@ -1,0 +1,119 @@
+@import url('theme.css');
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.table-primary {
+    background-color: var(--primary-light);
+    color: var(--text-white);
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table thead th {
+    font-weight: 600;
+    text-align: left;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+    background-color: var(--bg-light);
+}
+
+/* Heading Styles */
+h3 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Form Styles */
+#btn {
+    margin: 0;
+}
+
+/* Add Complaint Button Container */
+.text-center {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#f1 {
+    display: inline-block;
+}
+
+/* Button Styles */
+.btn-outline-primary {
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.btn-outline-primary:hover {
+    color: var(--text-white);
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-row h3 {
+    margin: 0;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.header-row form {
+    margin: 0;
+}
+
+.header-row .btn-primary {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.95rem;
+}

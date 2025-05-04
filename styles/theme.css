@@ -1,0 +1,105 @@
+:root {
+    /* Primary Colors */
+    --primary-color: #5D7EF7;
+    --primary-dark: #4B6AD6;
+    --primary-light: #7B94F9;
+
+    /* Secondary Colors */
+    --secondary-color: #2C3E50;
+    --secondary-light: #34495E;
+
+    /* Accent Colors */
+    --accent-color: #3498DB;
+    --accent-dark: #2980B9;
+
+    /* Text Colors */
+    --text-color: #2C3E50;
+    --text-light: #6C7A89;
+    --text-white: #ffffff;
+
+    /* Background Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-light: #ECF0F1;
+
+    /* Border and Shadow */
+    --border-color: #E1E8ED;
+    --border-radius: 8px;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 15px rgba(0, 0, 0, 0.15);
+
+    /* Transitions */
+    --transition-fast: all 0.2s ease;
+    --transition: all 0.3s ease;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Typography */
+    --font-family-primary: 'Poppins', sans-serif;
+    --font-family-secondary: 'Montserrat', sans-serif;
+}
+
+/* Common Button Styles */
+.btn {
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    font-family: var(--font-family-primary);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Common Form Styles */
+.form-control {
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(93, 126, 247, 0.1);
+    outline: none;
+}
+
+/* Common Card Styles */
+.card {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
