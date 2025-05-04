@@ -21,14 +21,14 @@
         <ul class="sidebar-menu" >
           <li ><div id="on"><a href="admindashboard.php" ><i class="fas fa-home"></i> Dashboard</a></div></li>
           <li><div id="tw"><a href="adminusers.php"><i class="fas fa-user"></i> Users</a></div></li>
-          <li><div id="th"><a href="adminmanager.php"><i class="fas fa-user"></i> Managers</a></div></li>
+          <!-- <li><div id="th"><a href="adminmanager.php"><i class="fas fa-user"></i> Managers</a></div></li> -->
           <li><div id="fo"><a href="addadmin.php"><i class="fas fa-sign-out-alt"></i> Add Admin</a></div></li>
-          <li><div id="fi"><a href="add_manager.php"><i class="fas fa-sign-out-alt"></i> Add Manager</a></div></li>
+          <!-- <li><div id="fi"><a href="add_manager.php"><i class="fas fa-sign-out-alt"></i> Add Manager</a></div></li> -->
           <li><div class="sidebar-menu-item"><a href="manage_managers.php"><i class="fas fa-users-cog"></i> Manage Managers</a></div></li>
-          <li><div id="si"><a href="allcomplaints.php"><i class="fas fa-clipboard-list"></i> All Complaints</a></div></li>
-          <li><div id="se"><a href="unsolvedcomplaint.php"><i class="fas fa-exclamation-circle"></i> Unsolved</a></div></li>
-          <li><div id="ei"><a href="ongoingcomplaint.php"><i class="fas fa-sign-out-alt"></i> ongoing </a></div></li>
-          <li><div id="ni"><a href="solvedcomplaint.php"><i class="fas fa-check-circle"></i> Solved</a></div></li>
+          <li><div id="si"><a href="complaints.php"><i class="fas fa-clipboard-list"></i>Complaints</a></div></li>
+          <!-- <li><div id="se"><a href="unsolvedcomplaint.php"><i class="fas fa-exclamation-circle"></i> Unsolved</a></div></li> -->
+          <!-- <li><div id="ei"><a href="ongoingcomplaint.php"><i class="fas fa-sign-out-alt"></i> ongoing </a></div></li>
+          <li><div id="ni"><a href="solvedcomplaint.php"><i class="fas fa-check-circle"></i> Solved</a></div></li> -->
           <li><div id="el"><a href="adddepartment.php"><i class="fas fa-cog"></i> Add Department</a></div></li>
           <li><div id="tw"><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></div></li>
         </ul>
