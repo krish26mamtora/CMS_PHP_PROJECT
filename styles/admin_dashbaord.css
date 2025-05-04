@@ -1,0 +1,41 @@
+body {
+    background-color: #e6f2ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#all {
+    padding: 20px;
+}
+
+h2 {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.card {
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+    text-align: center;
+    background-color: #95AAF7;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.card-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1b1b1b;
+}

@@ -57,11 +57,14 @@ while($row = mysqli_fetch_assoc($result)){
     echo('<td>'.htmlspecialchars($row['department']).'</td>');
     echo('<td>'.htmlspecialchars($row['date']).'</td>');
     echo('<td>');
-    echo('<form action="updatedcomplaintsonuser.php" method="post" id="btn">');
-    echo '<input type="hidden" name="cno" value="' . $row['cno'] . '">';
-    echo('<button type="submit" class="btn btn-outline-primary" name="submit" >View Progress</button>');
-    echo('</form>');
- echo('</td>');
+    echo('<button type="button" class="btn btn-outline-primary view-complaint" data-complaint="' . htmlspecialchars(json_encode([
+        'details' => $row['complaint_details'],
+        'department' => $row['department'],
+        'location' => $row['location'],
+        'date' => $row['date'],
+        'status' => $row['status']
+    ])) . '">View Progress</button>');
+    echo('</td>');
 
     echo('</tr>');
     $count++;
@@ -83,3 +86,60 @@ mysqli_close($con); // Close connection
 // include 'partials/footer2.html';
 
 ?>
+
+<!-- // Add this before closing body tag
+echo(' -->
+<div class="modal fade" id="complaintModal" tabindex="-1" aria-labelledby="complaintModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="complaintModalLabel">Complaint Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="complaint-info">
+                    <div class="info-group">
+                        <label>Details:</label>
+                        <p id="modalDetails"></p>
+                    </div>
+                    <div class="info-group">
+                        <label>Department:</label>
+                        <p id="modalDepartment"></p>
+                    </div>
+                    <div class="info-group">
+                        <label>Location:</label>
+                        <p id="modalLocation"></p>
+                    </div>
+                    <div class="info-group">
+                        <label>Date:</label>
+                        <p id="modalDate"></p>
+                    </div>
+                    <div class="info-group">
+                        <label>Status:</label>
+                        <p id="modalStatus"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".view-complaint");
+    buttons.forEach(button => {
+        button.addEventListener("click", function() {
+            const data = JSON.parse(this.dataset.complaint);
+            document.getElementById("modalDetails").textContent = data.details;
+            document.getElementById("modalDepartment").textContent = data.department;
+            document.getElementById("modalLocation").textContent = data.location;
+            document.getElementById("modalDate").textContent = data.date;
+            document.getElementById("modalStatus").textContent = data.status;
+            
+            const modal = new bootstrap.Modal(document.getElementById("complaintModal"));
+            modal.show();
+        });
+    });
+});
+</script>
+');

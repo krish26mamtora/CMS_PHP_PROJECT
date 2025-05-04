@@ -117,3 +117,69 @@ h3 {
     padding: 0.5rem 1.5rem;
     font-size: 0.95rem;
 }
+
+
+/* Modal Styles */
+.modal-content {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--nav-primary), var(--nav-secondary));
+    color: white;
+    border-bottom: none;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    padding: 1rem 1.5rem;
+}
+
+.modal-title {
+    font-weight: 600;
+    margin: 0;
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.complaint-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.info-group label {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.info-group p {
+    margin: 0;
+    padding: 0.5rem;
+    background: var(--bg-light);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+}
+
+/* View Button Styles */
+.view-complaint {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.view-complaint:hover {
+    transform: translateY(-2px);
+}
